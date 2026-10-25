@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PRODUCT_LINKS = [
   { href: "#reach", label: "Reach" },
   { href: "#assist", label: "Assist" },
@@ -17,13 +19,14 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <a href="#top" className="flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-blue text-sm font-bold text-white">
-                O
-              </span>
-              <span className="font-display text-lg font-semibold text-ink">
-                OrynDoc
-              </span>
+            <a href="#top" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="OrynDoc"
+                width={707}
+                height={353}
+                className="h-8 w-auto"
+              />
             </a>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink-soft">
               The connected operating system for modern medical practices.

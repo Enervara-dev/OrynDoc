@@ -73,12 +73,16 @@ export function WorkspaceMockup() {
 
       <div className="relative overflow-hidden rounded-2xl border border-line bg-white shadow-[0_40px_80px_-32px_rgba(15,23,60,0.25)]">
         <div className="flex items-center gap-4 border-b border-line px-5 py-3.5">
-          <div className="flex items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-md bg-blue text-sm font-bold text-white">
-              O
-            </span>
-            <span className="font-display text-sm font-semibold text-ink">
-              OrynDoc <span className="font-normal text-ink-soft">Workspace</span>
+          <div className="flex items-center gap-1.5">
+            <Image
+              src="/logo.png"
+              alt="OrynDoc"
+              width={707}
+              height={353}
+              className="h-5 w-auto"
+            />
+            <span className="font-display text-sm font-normal text-ink-soft">
+              Workspace
             </span>
           </div>
           <div className="ml-2 hidden flex-1 items-center gap-2 rounded-lg bg-surface-tint px-3 py-1.5 text-xs text-ink-soft sm:flex">

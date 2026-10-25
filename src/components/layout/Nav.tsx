@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -44,13 +45,15 @@ export function Nav() {
         aria-label="Primary"
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10"
       >
-        <a href="#top" className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-blue text-sm font-bold text-white">
-            O
-          </span>
-          <span className="font-display text-lg font-semibold tracking-tight text-ink">
-            OrynDoc
-          </span>
+        <a href="#top" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="OrynDoc"
+            width={707}
+            height={353}
+            priority
+            className="h-8 w-auto"
+          />
         </a>
 
         <ul className="hidden items-center gap-7 lg:flex">
