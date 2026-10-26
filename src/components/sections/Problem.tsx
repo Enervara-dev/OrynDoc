@@ -7,23 +7,23 @@ import { fadeUp, viewportOnce } from "@/lib/motion";
 const FRICTIONS = [
   {
     n: "01",
-    title: "Bookings scattered everywhere",
-    desc: "A phone line, a WhatsApp number, a listing site, a front-desk notebook, each with its own version of the schedule.",
+    title: "Discovery and booking are scattered",
+    desc: "A phone line, a listing site, a WhatsApp number, a front-desk notebook: patients find and book a doctor through a different channel every time, with no single source of truth.",
   },
   {
     n: "02",
-    title: "Follow-ups fall through",
-    desc: "Without a system tracking what happens after a visit, recovery check-ins and chronic-care follow-ups quietly stop happening.",
+    title: "Consultations happen without full context",
+    desc: "Doctors walk into the room without the patient's history already summarized, leaving less of the visit for the conversation that actually matters.",
   },
   {
     n: "03",
-    title: "Communication is disconnected",
-    desc: "Reminders, instructions, and results travel through whichever channel is convenient in the moment, rarely the same one twice.",
+    title: "Operations are stitched together by hand",
+    desc: "Appointments, records, and billing live in separate tools, so staff spend hours reconciling details that should already match.",
   },
   {
     n: "04",
-    title: "Administrative overload",
-    desc: "Clinical staff spend hours reconciling records, chasing confirmations, and re-entering the same patient details.",
+    title: "Care goes quiet after the visit",
+    desc: "Follow-ups, reminders, and who still has access to what depend on someone remembering to act, so continuity of care is left to chance.",
   },
 ];
 

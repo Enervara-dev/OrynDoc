@@ -79,7 +79,7 @@ export function WorkspaceMockup() {
               alt="OrynDoc"
               width={707}
               height={353}
-              className="h-5 w-auto"
+              className="h-9 w-auto"
             />
             <span className="font-display text-sm font-normal text-ink-soft">
               Workspace

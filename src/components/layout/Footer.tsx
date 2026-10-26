@@ -25,7 +25,7 @@ export function Footer() {
                 alt="OrynDoc"
                 width={707}
                 height={353}
-                className="h-8 w-auto"
+                className="h-16 w-auto"
               />
             </a>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink-soft">
