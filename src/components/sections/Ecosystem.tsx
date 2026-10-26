@@ -16,7 +16,7 @@ const PRODUCTS = [
     accent: "#1e4fe0",
     name: "OrynDoc Reach",
     headline: "Patients find you, book you, and come back.",
-    desc: "A branded doctor profile, a QR-accessible booking page, and SEO that puts your practice in front of the patients searching for you. Reach handles the appointment and the communication around it: confirmations, reminders, and the follow-ups that most practices quietly drop.",
+    desc: "A branded doctor profile, a QR-accessible booking page, and Value that puts your practice in front of the patients searching for you. Reach handles the appointment and the communication around it: confirmations, reminders, and the follow-ups that most practices quietly drop.",
     points: [
       "Doctor profile & QR-accessible booking page",
       "Availability, scheduling & appointment management",
