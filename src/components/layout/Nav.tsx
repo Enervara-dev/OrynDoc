@@ -15,15 +15,38 @@ const PRODUCT_LINKS = [
 
 const PAGE_LINKS = [{ href: "#journey", label: "Patient journey" }];
 
+const ALL_LINKS = [...PRODUCT_LINKS, ...PAGE_LINKS];
+
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = ALL_LINKS.map((link) =>
+      document.getElementById(link.href.slice(1)),
+    ).filter((el): el is HTMLElement => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+    );
+
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -58,24 +81,42 @@ export function Nav() {
 
         <ul className="hidden items-center gap-7 lg:flex">
           {PRODUCT_LINKS.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className="relative">
               <a
                 href={link.href}
-                className="text-sm font-medium text-ink-soft transition-colors hover:text-blue"
+                className={`text-sm font-medium transition-colors ${
+                  active === link.href ? "text-blue" : "text-ink-soft hover:text-blue"
+                }`}
               >
                 {link.label}
               </a>
+              {active === link.href && (
+                <motion.span
+                  layoutId="nav-active"
+                  className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-blue"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
             </li>
           ))}
           <li className="h-4 w-px bg-line" aria-hidden="true" />
           {PAGE_LINKS.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className="relative">
               <a
                 href={link.href}
-                className="text-sm font-medium text-ink-soft transition-colors hover:text-blue"
+                className={`text-sm font-medium transition-colors ${
+                  active === link.href ? "text-blue" : "text-ink-soft hover:text-blue"
+                }`}
               >
                 {link.label}
               </a>
+              {active === link.href && (
+                <motion.span
+                  layoutId="nav-active"
+                  className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-blue"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
             </li>
           ))}
         </ul>
