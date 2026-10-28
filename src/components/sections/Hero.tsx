@@ -1,21 +1,54 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 import { HeroImage } from "./HeroImage";
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const reduceMotion = useReducedMotion();
+  const [playing, setPlaying] = useState(false);
+  const [timedOut, setTimedOut] = useState(false);
+  const videoReady = Boolean(reduceMotion) || playing || timedOut;
+
+  useEffect(() => {
+    const fallback = window.setTimeout(() => setTimedOut(true), 2500);
+    return () => window.clearTimeout(fallback);
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || reduceMotion) return;
+    video.play().catch(() => setTimedOut(true));
+  }, [reduceMotion]);
+
   return (
     <section
       id="top"
       className="relative overflow-hidden bg-white pt-32 pb-20 lg:pt-44 lg:pb-28"
     >
-      <div className="dot-grid absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
+      <video
+        ref={videoRef}
+        aria-hidden="true"
+        muted
+        loop
+        playsInline
+        preload="auto"
+        onPlaying={() => setPlaying(true)}
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src="/7580480-compressed.mp4" type="video/mp4" />
+      </video>
+
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent" />
+      <div className="dot-grid absolute inset-0 opacity-60 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:px-10">
         <motion.div
           initial="hidden"
-          animate="visible"
+          animate={videoReady ? "visible" : "hidden"}
           variants={staggerContainer(0.12, 0.1)}
           className="flex flex-col justify-center"
         >
@@ -48,7 +81,7 @@ export function Hero() {
             </a>
             <a
               href="#ecosystem"
-              className="rounded-lg border border-line px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-blue hover:text-blue"
+              className="rounded-lg border border-line bg-white/70 px-7 py-3.5 text-sm font-semibold text-ink backdrop-blur-sm transition-colors hover:border-blue hover:text-blue"
             >
               See how it connects
             </a>
@@ -75,7 +108,7 @@ export function Hero() {
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={videoReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
           transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="flex items-start justify-center lg:-mt-20"
         >
