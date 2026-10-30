@@ -32,10 +32,10 @@ export function Footer() {
               The connected operating system for modern medical practices.
             </p>
             <a
-              href="mailto:hello@oryndoc.com"
+              href="mailto:hello@enervara.com"
               className="mt-4 inline-block text-sm font-semibold text-blue underline underline-offset-2"
             >
-              hello@oryndoc.com
+              hello@enervara.com
             </a>
           </div>
 

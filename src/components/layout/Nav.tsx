@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -121,7 +122,13 @@ export function Nav() {
           ))}
         </ul>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <Link
+            href="/login"
+            className="rounded-lg px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-blue-soft hover:text-blue"
+          >
+            Log in
+          </Link>
           <a
             href="#onboard"
             className="rounded-lg bg-blue px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-dark"
@@ -164,6 +171,15 @@ export function Nav() {
                   </a>
                 </li>
               ))}
+              <li className="pt-2">
+                <Link
+                  href="/login"
+                  onClick={() => setOpen(false)}
+                  className="block rounded-lg border border-line px-5 py-3 text-center text-sm font-semibold text-ink"
+                >
+                  Log in
+                </Link>
+              </li>
               <li className="pt-2">
                 <a
                   href="#onboard"
