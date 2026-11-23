@@ -68,7 +68,7 @@ export function LoginPage() {
 
         <div className="relative">
           <Link href="/" className="inline-flex items-center rounded-xl bg-white px-4 py-2 shadow-lg">
-            <Image src="/logo.png" alt="OrynDoc" width={707} height={353} className="h-10 w-auto" />
+            <Image src="/logo.png" alt="Oryndoc" width={707} height={353} className="h-10 w-auto" />
           </Link>
         </div>
 
@@ -113,7 +113,7 @@ export function LoginPage() {
           href="/"
           className="absolute left-6 top-6 inline-flex items-center gap-2 text-sm font-medium text-ink-soft transition-colors hover:text-blue lg:left-10 lg:top-8"
         >
-          <ArrowLeft size={16} /> Back to OrynDoc
+          <ArrowLeft size={16} /> Back to Oryndoc
         </Link>
 
         <motion.div
@@ -123,7 +123,7 @@ export function LoginPage() {
           className="w-full max-w-md"
         >
           <div className="mb-8 lg:hidden">
-            <Image src="/logo.png" alt="OrynDoc" width={707} height={353} className="h-12 w-auto" />
+            <Image src="/logo.png" alt="Oryndoc" width={707} height={353} className="h-12 w-auto" />
           </div>
 
           <h2 className="font-display text-3xl font-semibold tracking-tight text-ink">Log in</h2>
@@ -211,7 +211,7 @@ export function LoginPage() {
 
           <div className="mt-8 flex items-center gap-4 text-xs text-ink-soft">
             <span className="h-px flex-1 bg-line" />
-            New to OrynDoc?
+            New to Oryndoc?
             <span className="h-px flex-1 bg-line" />
           </div>
 

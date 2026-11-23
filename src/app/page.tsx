@@ -1,7 +1,6 @@
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { BackedBy } from "@/components/sections/BackedBy";
 import { Problem } from "@/components/sections/Problem";
 import { Ecosystem } from "@/components/sections/Ecosystem";
 import { PatientJourney } from "@/components/sections/PatientJourney";
@@ -16,7 +15,6 @@ export default function Home() {
       <Nav />
       <main className="flex-1">
         <Hero />
-        <BackedBy />
         <Problem />
         <Ecosystem />
         <PatientJourney />

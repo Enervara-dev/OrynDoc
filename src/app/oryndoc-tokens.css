@@ -1,0 +1,195 @@
+/* GENERATED COPY — do not edit. Source: design-system/oryndoc/tokens.css
+   Update with: node design-system/oryndoc/tools/sync-tokens.mjs */
+/*
+ * Oryndoc design tokens — canonical source.
+ * Edit this file only, then run:  node design-system/oryndoc/tools/sync-tokens.mjs
+ * Each application receives a byte-identical copy named oryndoc-tokens.css.
+ *
+ * Theme strategy
+ *   Light is the default everywhere.
+ *   Apps that support dark mode set <html data-od-theme="auto"> (follows the OS)
+ *   or data-od-theme="dark" (forced). Light-only surfaces (patient booking,
+ *   marketing, clinic sites) simply never set the attribute.
+ */
+
+:root {
+  /* ---- Neutrals (cool grey with a faint green cast that sits with the teal) */
+  --od-canvas: #f5f7f7;            /* app background behind panels */
+  --od-surface: #ffffff;           /* panels, cards, inputs */
+  --od-surface-sunken: #edf1f1;    /* table headers, hover rows, wells */
+  --od-surface-raised: #ffffff;    /* menus, dialogs (paired with --od-shadow-overlay) */
+  --od-border: #dce3e3;
+  --od-border-strong: #c3cdcd;
+  --od-border-input: #7f8e91;      /* 3.4:1 — form control outlines (WCAG 1.4.11) */
+  --od-text: #0e1a1c;              /* 17.2:1 on surface */
+  --od-text-secondary: #43555a;    /* 7.6:1 */
+  --od-text-tertiary: #5f6f73;     /* 5.2:1 on surface, 4.9:1 on canvas — smallest allowed for text */
+  --od-text-disabled: #8d9a9d;     /* non-essential only (disabled controls) */
+  --od-text-inverse: #ffffff;
+
+  /* ---- Brand: Oryn teal */
+  --od-primary: #0b6e73;           /* 6.0:1 with white text */
+  --od-primary-hover: #095c60;
+  --od-primary-active: #074a4d;
+  --od-primary-subtle: #e5f1f1;
+  --od-primary-subtle-strong: #c9e3e3;
+  --od-primary-text: #075458;      /* teal text on subtle/white backgrounds */
+  --od-on-primary: #ffffff;
+  --od-ring: #0b6e73;
+
+  /* ---- Status (each "text" value passes 4.5:1 on both white and its subtle tint) */
+  --od-success: #11734a;
+  --od-success-subtle: #e6f4ec;
+  --od-warning: #9a5b00;
+  --od-warning-subtle: #fbf1de;
+  --od-danger: #b3261e;
+  --od-danger-hover: #951f19;
+  --od-danger-subtle: #fbeae8;
+  --od-info: #1f5c9e;
+  --od-info-subtle: #e7eff8;
+
+  /* ---- Data visualisation (ordered; distinguishable for common colour-vision deficiencies) */
+  --od-chart-1: #0b6e73;
+  --od-chart-2: #d08a2b;
+  --od-chart-3: #4a6fb5;
+  --od-chart-4: #8a5aa8;
+  --od-chart-5: #5f6f73;
+  --od-chart-grid: #e6ebeb;
+
+  /* ---- Typography */
+  --od-font-sans: "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --od-font-mono: "Atkinson Hyperlegible Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  /* Operational scale (dashboards). Patient and marketing use the "public" step. */
+  --od-text-xs: 0.75rem;    /* 12px — badges, table meta. Never body copy. */
+  --od-text-sm: 0.8125rem;  /* 13px — dense table cells, helper text */
+  --od-text-base: 0.875rem; /* 14px — dashboard body */
+  --od-text-md: 1rem;       /* 16px — public body, dashboard section titles */
+  --od-text-lg: 1.125rem;   /* 18px */
+  --od-text-xl: 1.375rem;   /* 22px — dashboard page title */
+  --od-text-2xl: 1.75rem;   /* 28px — public step headings */
+  --od-text-3xl: 2.25rem;   /* 36px */
+  --od-text-display: clamp(2.25rem, 1.4rem + 3.2vw, 3.75rem); /* marketing hero only */
+  --od-leading-tight: 1.2;
+  --od-leading-snug: 1.35;
+  --od-leading-normal: 1.5;
+
+  /* ---- Space (4px base) */
+  --od-space-1: 0.25rem;
+  --od-space-2: 0.5rem;
+  --od-space-3: 0.75rem;
+  --od-space-4: 1rem;
+  --od-space-5: 1.25rem;
+  --od-space-6: 1.5rem;
+  --od-space-8: 2rem;
+  --od-space-10: 2.5rem;
+  --od-space-12: 3rem;
+  --od-space-16: 4rem;
+  --od-space-24: 6rem;
+
+  /* ---- Shape: radius follows hierarchy, not one value for everything */
+  --od-radius-xs: 3px;   /* checkboxes, tags inside dense tables */
+  --od-radius-sm: 6px;   /* buttons, inputs, badges */
+  --od-radius-md: 8px;   /* panels, cards */
+  --od-radius-lg: 12px;  /* dialogs, sheets, patient choice tiles */
+  --od-radius-full: 999px;
+
+  /* ---- Elevation: borders do the work; shadows only for floating layers */
+  --od-shadow-none: none;
+  --od-shadow-overlay: 0 12px 32px -12px rgb(14 26 28 / 0.22), 0 2px 6px -2px rgb(14 26 28 / 0.08);
+  --od-shadow-focus: 0 0 0 3px rgb(11 110 115 / 0.25);
+
+  /* ---- Layout */
+  --od-sidebar-width: 15rem;
+  --od-topbar-height: 3.5rem;
+  --od-content-max: 80rem;
+  --od-reading-max: 40rem;
+  --od-touch-target: 2.75rem; /* 44px */
+
+  /* ---- Motion */
+  --od-ease: cubic-bezier(0.2, 0, 0, 1);
+  --od-duration-fast: 120ms;
+  --od-duration-base: 180ms;
+  --od-duration-slow: 260ms;
+
+  color-scheme: light;
+}
+
+/* ---- Dark theme (opt-in per app) */
+:root[data-od-theme="dark"] {
+  --od-canvas: #0b1213;
+  --od-surface: #111a1c;
+  --od-surface-sunken: #172325;
+  --od-surface-raised: #182426;
+  --od-border: #243234;
+  --od-border-strong: #33464a;
+  --od-border-input: #64787c;
+  --od-text: #e6eded;
+  --od-text-secondary: #b0bec0;
+  --od-text-tertiary: #93a4a7;
+  --od-text-disabled: #61757a;
+  --od-text-inverse: #0b1213;
+  --od-primary: #4fb3b6;
+  --od-primary-hover: #6cc4c6;
+  --od-primary-active: #8fd3d4;
+  --od-primary-subtle: #12302f;
+  --od-primary-subtle-strong: #1a4342;
+  --od-primary-text: #7fcbcd;
+  --od-on-primary: #04201f;
+  --od-ring: #6cc4c6;
+  --od-success: #5cc58f;
+  --od-success-subtle: #12291e;
+  --od-warning: #e3a54b;
+  --od-warning-subtle: #2e2210;
+  --od-danger: #f08a80;
+  --od-danger-hover: #f5a59d;
+  --od-danger-subtle: #321614;
+  --od-info: #84b1e6;
+  --od-info-subtle: #13243a;
+  --od-chart-grid: #223033;
+  --od-shadow-overlay: 0 12px 32px -12px rgb(0 0 0 / 0.6), 0 2px 6px -2px rgb(0 0 0 / 0.4);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-od-theme="auto"] {
+    --od-canvas: #0b1213;
+    --od-surface: #111a1c;
+    --od-surface-sunken: #172325;
+    --od-surface-raised: #182426;
+    --od-border: #243234;
+    --od-border-strong: #33464a;
+    --od-border-input: #64787c;
+    --od-text: #e6eded;
+    --od-text-secondary: #b0bec0;
+    --od-text-tertiary: #93a4a7;
+    --od-text-disabled: #61757a;
+    --od-text-inverse: #0b1213;
+    --od-primary: #4fb3b6;
+    --od-primary-hover: #6cc4c6;
+    --od-primary-active: #8fd3d4;
+    --od-primary-subtle: #12302f;
+    --od-primary-subtle-strong: #1a4342;
+    --od-primary-text: #7fcbcd;
+    --od-on-primary: #04201f;
+    --od-ring: #6cc4c6;
+    --od-success: #5cc58f;
+    --od-success-subtle: #12291e;
+    --od-warning: #e3a54b;
+    --od-warning-subtle: #2e2210;
+    --od-danger: #f08a80;
+    --od-danger-hover: #f5a59d;
+    --od-danger-subtle: #321614;
+    --od-info: #84b1e6;
+    --od-info-subtle: #13243a;
+    --od-chart-grid: #223033;
+    --od-shadow-overlay: 0 12px 32px -12px rgb(0 0 0 / 0.6), 0 2px 6px -2px rgb(0 0 0 / 0.4);
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --od-duration-fast: 0ms;
+    --od-duration-base: 0ms;
+    --od-duration-slow: 0ms;
+  }
+}

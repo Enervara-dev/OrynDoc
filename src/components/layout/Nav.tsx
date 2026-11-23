@@ -72,7 +72,7 @@ export function Nav() {
         <a href="#top" className="flex items-center">
           <Image
             src="/logo.png"
-            alt="OrynDoc"
+            alt="Oryndoc"
             width={707}
             height={353}
             priority

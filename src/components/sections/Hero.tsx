@@ -63,7 +63,7 @@ export function Hero() {
             variants={fadeUp}
             className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-ink-soft"
           >
-            OrynDoc is the operating system behind modern medical practices,
+            Oryndoc is the operating system behind modern medical practices,
             connecting patient discovery, booking, consultations, operations,
             and follow-up into a single, dependable system of record.
           </motion.p>

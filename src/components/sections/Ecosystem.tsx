@@ -13,10 +13,11 @@ import {
 const PRODUCTS = [
   {
     id: "reach",
-    accent: "#1e4fe0",
-    name: "OrynDoc Reach",
+    status: "available" as const,
+    accent: "var(--od-chart-1)",
+    name: "Oryndoc Reach",
     headline: "Patients find you, book you, and come back.",
-    desc: "A branded doctor profile, a QR-accessible booking page, and Value that puts your practice in front of the patients searching for you. Reach handles the appointment and the communication around it: confirmations, reminders, and the follow-ups that most practices quietly drop.",
+    desc: "A branded doctor profile, a QR-accessible booking page, and a public profile that puts your practice in front of the patients searching for you. Reach handles the appointment and the communication around it: confirmations, reminders, and the follow-ups that most practices quietly drop.",
     points: [
       "Doctor profile & QR-accessible booking page",
       "Availability, scheduling & appointment management",
@@ -27,10 +28,11 @@ const PRODUCTS = [
   },
   {
     id: "assist",
-    accent: "#0d9fa6",
-    name: "OrynDoc Assist",
+    status: "planned" as const,
+    accent: "var(--od-chart-3)",
+    name: "Oryndoc Assist",
     headline: "A multi-agent copilot, live in the room during the visit.",
-    desc: "Assist starts with structured, empathetic patient onboarding before the visit, then stays active through the consultation itself. A multi-agent system listens to the conversation in real time and surfaces possible conditions, lab tests to confirm them, and medication ideas, while exploring other possibilities worth considering, all grounded in the patient's full history so it can answer effectively.",
+    desc: "Assist starts with structured, empathetic patient onboarding before the visit, then stays active through the consultation itself. Later, it is designed to support the consultation itself with suggestions a doctor can review, always as an aid to clinical judgement, never a replacement for it.",
     points: [
       "Structured, conversational pre-visit onboarding and history collection",
       "Real-time conversation analysis during the consultation",
@@ -41,8 +43,9 @@ const PRODUCTS = [
   },
   {
     id: "practice",
-    accent: "#5b5fef",
-    name: "OrynDoc Practice",
+    status: "planned" as const,
+    accent: "var(--od-chart-4)",
+    name: "Oryndoc Practice",
     headline: "One workspace for the practice behind the practice.",
     desc: "Appointments, patient records, billing, and pharmacy integrations live in a single operational workspace, so staff stop reconciling spreadsheets and start running the day from one screen.",
     points: [
@@ -54,8 +57,9 @@ const PRODUCTS = [
   },
   {
     id: "voice",
-    accent: "#0ea5e9",
-    name: "OrynDoc Voice",
+    status: "planned" as const,
+    accent: "var(--od-chart-5)",
+    name: "Oryndoc Voice",
     headline: "A voice channel that remembers every patient.",
     desc: "Voice handles the calls practices don't have staff time for: appointment confirmations, reminders, and structured follow-up check-ins, in a consistent, recorded, reviewable way.",
     points: [
@@ -67,8 +71,9 @@ const PRODUCTS = [
   },
   {
     id: "assure",
-    accent: "#334467",
-    name: "OrynDoc Assure",
+    status: "planned" as const,
+    accent: "var(--od-chart-5)",
+    name: "Oryndoc Assure",
     headline: "Consent, access, and audit, underneath everything else.",
     desc: "Assure is the assurance layer running beneath the platform: who has access to what, what's been consented to, and what's been logged. We present only the capabilities that are verified or explicitly planned, nothing speculative.",
     points: [
@@ -91,8 +96,12 @@ export function Ecosystem() {
           variants={fadeUp}
           className="max-w-2xl text-balance font-display text-3xl font-semibold leading-tight text-ink sm:text-4xl"
         >
-          Five products. One connected practice.
+          One connected practice, built product by product.
         </motion.h2>
+        <p className="mt-4 max-w-2xl text-ink-soft">
+          Reach is available today. The other products are in development; we describe what each is designed to do and
+          label it clearly until it ships.
+        </p>
 
         <div className="mt-20 flex flex-col gap-28">
           {PRODUCTS.map((product, i) => {
@@ -111,9 +120,20 @@ export function Ecosystem() {
                 }`}
               >
                 <div>
-                  <h3 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
-                    {product.name}
-                  </h3>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h3 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
+                      {product.name}
+                    </h3>
+                    <span
+                      className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                        product.status === "available"
+                          ? "bg-[var(--od-success-subtle)] text-[var(--od-success)]"
+                          : "bg-[var(--od-surface-sunken)] text-[var(--od-text-secondary)]"
+                      }`}
+                    >
+                      {product.status === "available" ? "Available now" : "In development"}
+                    </span>
+                  </div>
                   <p className="mt-3 text-balance text-lg leading-snug text-ink">
                     {product.headline}
                   </p>

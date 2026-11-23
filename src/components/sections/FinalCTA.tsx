@@ -22,7 +22,7 @@ export function FinalCTA() {
             </h2>
             <p className="mt-5 max-w-md leading-relaxed text-ink-soft">
               Tell us about your practice, and our team will set up your
-              OrynDoc profile and walk you through Reach, Assist, Practice,
+              Oryndoc profile and walk you through Reach, Assist, Practice,
               Voice, and Assure, at your pace.
             </p>
           </motion.div>

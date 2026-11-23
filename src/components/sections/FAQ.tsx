@@ -24,7 +24,7 @@ const FAQS = [
   },
   {
     q: "What happens to my existing patient records?",
-    a: "Practice brings appointments, records, and billing into one workspace going forward. Our team works with you during onboarding to bring in what you already have.",
+    a: "Practice is in development; it is designed to bring appointments, records, and billing into one workspace. Today, Reach covers appointments and patient records. Our team works with you during onboarding to bring in what you already have.",
   },
   {
     q: "How fast can a practice get started?",

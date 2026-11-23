@@ -22,7 +22,7 @@ export function Footer() {
             <a href="#top" className="flex items-center">
               <Image
                 src="/logo.png"
-                alt="OrynDoc"
+                alt="Oryndoc"
                 width={707}
                 height={353}
                 className="h-16 w-auto"
@@ -77,7 +77,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-2 border-t border-line pt-6 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; 2026 OrynDoc. All rights reserved.</p>
+          <p>&copy; 2026 Oryndoc. All rights reserved.</p>
           <p>Better connected care starts with a better connected practice.</p>
         </div>
       </div>

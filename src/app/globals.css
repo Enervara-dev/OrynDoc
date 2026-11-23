@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
+@import "./oryndoc-tokens.css";
+
+/* Marketing palette, mapped onto Oryndoc design tokens so the parent brand
+   matches every product. Names kept so existing components keep working. */
 :root {
-  --color-white: #ffffff;
-  --color-surface: #ffffff;
-  --color-surface-tint: #f3f6fd;
-  --color-ink: #0b1222;
-  --color-ink-soft: #46506b;
-  --color-line: #e1e7f5;
+  --od-font-sans: var(--font-atkinson), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-white: var(--od-surface);
+  --color-surface: var(--od-surface);
+  --color-surface-tint: var(--od-canvas);
+  --color-ink: var(--od-text);
+  --color-ink-soft: var(--od-text-secondary);
+  --color-line: var(--od-border);
 
-  --color-blue: #1e4fe0;
-  --color-blue-dark: #1540ba;
-  --color-blue-soft: #e8eefe;
-  --color-navy: #0a1333;
-  --color-navy-soft: #121d45;
+  --color-blue: var(--od-primary);
+  --color-blue-dark: var(--od-primary-hover);
+  --color-blue-soft: var(--od-primary-subtle);
+  --color-navy: #0b1213;
+  --color-navy-soft: #111a1c;
 
-  --color-sky: #0ea5e9;
-  --color-teal: #0d9fa6;
-  --color-indigo: #5b5fef;
-  --color-slate: #334467;
+  --color-sky: #4fb3b6;
+  --color-teal: var(--od-primary);
+  --color-indigo: var(--od-info);
+  --color-slate: var(--od-text-secondary);
 
-  --background: var(--color-white);
-  --foreground: var(--color-ink);
+  --background: var(--od-surface);
+  --foreground: var(--od-text);
 }
 
 @theme inline {
@@ -45,8 +50,13 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-display: var(--font-space-grotesk);
-  --font-sans: var(--font-jakarta);
+  --font-display: var(--od-font-sans);
+  --font-sans: var(--od-font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--od-ring);
+  outline-offset: 2px;
 }
 
 body {

@@ -1,25 +1,19 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
+import { Atkinson_Hyperlegible_Next } from "next/font/google";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { BackToTop } from "@/components/layout/BackToTop";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const atkinson = Atkinson_Hyperlegible_Next({
+  variable: "--font-atkinson",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "OrynDoc: The Connected Operating System for Modern Practices",
+  title: "Oryndoc: connected software for clinics",
   description:
-    "OrynDoc connects patient discovery, booking, consultations, practice operations, and follow-up into one platform. Better connected care starts with a better connected practice.",
+    "Oryndoc connects patient discovery, booking, consultations, practice operations, and follow-up into one platform. Better connected care starts with a better connected practice.",
   manifest: "/favicon/site.webmanifest",
   icons: {
     icon: [
@@ -45,7 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${jakarta.variable} h-full antialiased`}
+      className={`${atkinson.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink font-sans">
         <ScrollProgress />

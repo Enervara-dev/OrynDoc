@@ -76,7 +76,7 @@ export function WorkspaceMockup() {
           <div className="flex items-center gap-1.5">
             <Image
               src="/logo.png"
-              alt="OrynDoc"
+              alt="Oryndoc"
               width={707}
               height={353}
               className="h-9 w-auto"

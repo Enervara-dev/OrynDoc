@@ -68,7 +68,7 @@ export function OnboardingForm() {
         </h3>
         <p className="max-w-sm text-sm leading-relaxed text-ink-soft">
           Thank you, our team will reach out by email shortly to begin
-          setting up your OrynDoc profile.
+          setting up your Oryndoc profile.
         </p>
         <button
           type="button"
@@ -153,7 +153,7 @@ export function OnboardingForm() {
       </button>
 
       <p className="text-center text-xs text-ink-soft">
-        By submitting, you consent to OrynDoc contacting you about your
+        By submitting, you consent to Oryndoc contacting you about your
         onboarding request.
       </p>
     </form>
